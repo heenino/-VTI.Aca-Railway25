@@ -4,85 +4,85 @@ USE Testing_System_Assignment_1;
 
 -- create table: Department
 CREATE TABLE Department (
-DepartmentID		TINYINT , 
-DepartmentName		VARCHAR(50)
+Department_ID		TINYINT , 
+Department_Name		VARCHAR(50)
 );
 
 -- create table: Position
 CREATE TABLE Position (
-PositionID			TINYINT,
-PositionName		ENUM ('DEV','Test','Scrum Master','PM')
+Position_ID			TINYINT,
+Position_Name		ENUM ('DEV','Test','Scrum Master','PM')
 );
 
 -- create table: Account
 CREATE TABLE `Account` (
-AccountID			TINYINT,
+Account_ID			TINYINT,
 Email				VARCHAR(100),
-Username 			CHAR(12) ,
-fullname 			VARCHAR(50),
-DepartmentID		TINYINT,
-PositionID			TINYINT,
-CreateDate			DATETIME DEFAULT NOW()
+User_name 			CHAR(12) ,
+full_name 			VARCHAR(50),
+Department_ID		TINYINT,
+Position_ID			TINYINT,
+Create_Date			DATETIME DEFAULT NOW()
 );
 
 -- create table: Group
 CREATE TABLE `Group`	(
-GroupID				TINYINT,
-GroupName			VARCHAR(50),
-CreatorID			TINYINT,
-CreateDate			DATETIME DEFAULT NOW()
+Group_ID				TINYINT,
+Group_Name			VARCHAR(50),
+Creator_ID			TINYINT,
+Create_Date			DATETIME DEFAULT NOW()
 );
 
 -- create table: GroupAccount
-CREATE TABLE GroupAccount(
-GroupID				TINYINT,	
-AccountID			TINYINT,
-JoinDate			DATE
+CREATE TABLE Group_Account(
+Group_ID				TINYINT,	
+Account_ID			TINYINT,
+Join_Date			DATE
 );
 
 
-CREATE TABLE TypeQuestion(
-TypeID				TINYINT,
-TypeName			ENUM ('Essay','Multiple-Choice' )
+CREATE TABLE Type_Question(
+Type_ID				TINYINT,
+Type_Name			ENUM ('Essay','Multiple-Choice' )
 );
 
 -- create table: CategoryQuestion
-CREATE TABLE CategoryQuestion(
-CategoryID			TINYINT,
-CategoryName		VARCHAR(50)
+CREATE TABLE Category_Question(
+Category_ID			TINYINT,
+Category_Name		VARCHAR(50)
 );
 
 -- create table: Question
 CREATE TABLE Question(
-QuestionID			SMALLINT,
+Question_ID			SMALLINT,
 Content				VARCHAR(200),
-CategoryID			TINYINT,
-TypeID				TINYINT,
-CreatorID			TINYINT,
-createdate			DATETIME DEFAULT NOW()
+Category_ID			TINYINT,
+Type_ID				TINYINT,
+Creator_ID			TINYINT,
+create_date			DATETIME DEFAULT NOW()
 );
 
 -- create table: Answer
 CREATE TABLE Answer(
-AnswerID			TINYINT,
+Answer_ID			TINYINT,
 Content				VARCHAR(200),
-QuestionID			TINYINT UNSIGNED,
+Question_ID			TINYINT UNSIGNED,
 isCorrect			ENUM('TRUE','FALSE')
 );
 
 -- create table: Exam
 CREATE TABLE Exam(
-ExamID				TINYINT,	
+Exam_ID				TINYINT,	
 Codee				CHAR(6),
 Title				VARCHAR(100),
-CategoryID			TINYINT,
+Category_ID			TINYINT,
 Duration			CHAR(3),
-CreatorID			TINYINT,
-CreateDate			DATETIME DEFAULT NOW()
+Creator_ID			TINYINT,
+Create_Date			DATETIME DEFAULT NOW()
 );
 
 
-CREATE TABLE ExamQuestion(
-ExamID				TINYINT,
-QuestionID			TINYINT
+CREATE TABLE Exam_Question(
+Exam_ID				TINYINT,
+Question_ID			TINYINT
 );
