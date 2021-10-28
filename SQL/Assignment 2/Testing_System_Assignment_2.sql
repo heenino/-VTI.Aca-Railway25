@@ -7,7 +7,7 @@ CREATE TABLE Department (
 Department_ID		TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 Department_Name		VARCHAR(50) NOT NULL
 );
--- THÊM DỮ LIỆU CHO CÁC CỘT Ở DEPARMENT 
+----------------------------------------------------------- THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG PHÒNG BAN----------------------------------------------------
 INSERT INTO Department (Department_Name)
 VALUES 	('Makerting'),
 		('Sale'),
@@ -28,7 +28,7 @@ CREATE TABLE Position (
 Position_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Position_Name		ENUM ('DEV','Test','Scrum Master','PM') NOT NULL
 );
------------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở POSITION ----------------------------------------------------
+----------------------------------------------------------- THÊM DỮ LIỆU CHO CÁC CỘT Ở CHỨC VỤ ----------------------------------------------------
 INSERT INTO Position (Position_Name)
 VALUES 	
 					(1),	(2),	(3),	(4);
