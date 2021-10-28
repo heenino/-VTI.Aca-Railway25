@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS Testing_System_Assignment_1;
 CREATE DATABASE Testing_System_Assignment_1;
 USE Testing_System_Assignment_1;
 
-							-- create table 'Department'
+								-- TẠO BẢNG PHÒNG BAN
 CREATE TABLE Department (
 Department_ID		TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 Department_Name		VARCHAR(50) NOT NULL
@@ -18,8 +18,8 @@ VALUES 	(	N'Makerting'),
         (	N'Phó giám Đốc'), 
         (	N'Giám Đốc');
 
-    
-							-- create table: Position 
+
+								-- TẠO BẢNG CHỨC VỤ
 CREATE TABLE Position (
 Position_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Position_Name		ENUM ('DEV','Test','Scrum Master','PM') NOT NULL
@@ -27,9 +27,9 @@ Position_Name		ENUM ('DEV','Test','Scrum Master','PM') NOT NULL
 -- THÊM DỮ LIỆU CHO CÁC CỘT Ở POSITION
 INSERT INTO Position (Position_Name)
 VALUES 	(1),(2),(3),(4);
-   
-        
-								-- create table: Account
+
+
+								-- TẠO BẢNG THÔNG TIN THÀNH VIÊN
 CREATE TABLE `Account` (
 Account_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Email				VARCHAR(100) UNIQUE KEY NOT NULL,
@@ -51,9 +51,9 @@ VALUES
                 ('Rhymastic@gmail.com','Rhymastis','VuDucThien',2,2),
                 ('TranManhTung@yahoo.com','TungTeaa','VuManhTung',3,1),
                 ('Ricky@rapname.com','RickyStar','TranTien',3,3);
-                
 
-								-- create table: Group
+
+								-- TẠO BẢNG NHÓM
 CREATE TABLE `Group`	(
 Group_ID				TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Group_Name			VARCHAR(50) NOT NULL,
@@ -90,7 +90,7 @@ VALUES
                          (3,4,'2021-8-10'),
                          (2,5,'2021-7-10'),
                          (1,5,'2021-8-10');
-                         
+
 								-- TẠO BẢNG MẪU CÂU HỎI
 CREATE TABLE Type_Question(
 Type_ID				TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -151,7 +151,7 @@ VALUES
                   (4,1),
                   (1,2),
                   (3,2); 
- 
+
 									-- TẠO BẢNG ĐỀ THI
 CREATE TABLE Exam(
 Exam_ID				TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,	
@@ -170,7 +170,7 @@ VALUES
 				( 1,'Kiểm tra kỹ năng code trong MySQl', 3, 60, 1, '2010-9-12' ),
 				( 2,'tìm lổi trong 1 database Java', 1, 15, 2, '2012-5-30' ),
                 ( 3,'đâu là Ruby', 5, 15, 4, '2020-9-15' );
-                
+
 							-- TẠO BẢNG CÂU HỎI TRONG ĐỀ THI
 CREATE TABLE Exam_Question(
 Exam_ID				TINYINT UNSIGNED NOT NULL,
@@ -181,4 +181,4 @@ FOREIGN KEY (Question_ID) REFERENCES Question(Question_ID)
 -- THÊM DỮ LIỆU CHO BẢNG CÂU HỎI TRONG ĐỀ THI
 INSERT INTO Exam_Question(Exam_ID,Question_ID)
 VALUES 					
-						  (1,2),(1,1),(1,3),(2,3);
+						  (1,2),(1,1),(1,3),(2,3); 
