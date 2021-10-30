@@ -209,15 +209,20 @@ WHERE 	full_Name  LIKE  'B%n';
 
 
 ----------------------- Question 13: Xóa tất cả các question có nội dung bắt đầu bằng từ "câu hỏi"
+DELETE 
+FROM question
+WHERE Content LIKE 'câu hỏi%';
 
 
 
 ----------------------- Question 14: Update thông tin của account có id = 5 thành tên "Nguyễn Bá Lộc" và email thành loc.nguyenba@vti.com.vn
-
-
+UPDATE account
+set full_Name = 'Nguyễn Bá Lộc', Email = 'loc.nguyenba@vti.com.vn'
+WHERE Account_ID = 5;
 
 ----------------------------- Question 15: update account có id = 5 sẽ thuộc group có id = 4
-
-
+UPDATE group_account
+SET Account_ID = 5
+WHERE  Group_ID = 4
 
 
