@@ -3,126 +3,76 @@ CREATE DATABASE Testing_System_Assignment_2;
 USE Testing_System_Assignment_2;
 
 								-- TẠO BẢNG PHÒNG BAN
+DROP TABLE IF EXISTS Department;
 CREATE TABLE Department (
 Department_ID		TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-Department_Name		VARCHAR(50) NOT NULL
+Department_Name		VARCHAR(50) UNIQUE KEY NOT NULL
 );
------------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG PHÒNG BAN----------------------------------------------------
-INSERT INTO Department (Department_Name)
-VALUES 	('Makerting'),
-		('Sale'),
-        ('Bảo Vệ'), 
-        ('Nhân Sự'), 
-        ('Kỹ Thuật' ), 
-        ('Tài Chính'), 
-        ('Phó giám Đốc'), 
-        ('Giám Đốc'),
-        ('Lao Công'),
-        ('CEO'),
-        ('Con Giám Đốc'),
-        ('Bảo Vệ');
-
 
 								-- TẠO BẢNG CHỨC VỤ
+DROP TABLE IF EXISTS Position;
 CREATE TABLE Position (
 Position_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Position_Name		ENUM ('DEV','Test','Scrum Master','PM') NOT NULL
 );
------------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở CHỨC VỤ ----------------------------------------------------
-INSERT INTO Position (Position_Name)
-VALUES 	
-					(1),	(2),	(3),	(4);
-
 
 								-- TẠO BẢNG THÔNG TIN THÀNH VIÊN
+DROP TABLE IF EXISTS `Account`;
 CREATE TABLE `Account` (
 Account_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Email				VARCHAR(100) UNIQUE KEY NOT NULL,
-User_Name 			CHAR(12) UNIQUE KEY NOT NULL,
+User_Name 			CHAR(18) UNIQUE KEY NOT NULL,
 full_Name 			NCHAR(100) NOT NULL,
 Department_ID		TINYINT UNSIGNED DEFAULT(1),
 Position_ID			TINYINT UNSIGNED NOT NULL,
 Create_Date			DATETIME DEFAULT NOW(),
 FOREIGN KEY (Department_ID) REFERENCES Department (Department_ID),
 FOREIGN KEY (Position_ID) REFERENCES Position (Position_ID),
-CHECK (LENGTH(User_Name) >=6 AND length(full_Name) >=8)
+CHECK (LENGTH(User_Name) >=6 AND length(full_Name) >=5)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG THÀNH VIÊN ----------------------------------------------------------
-INSERT INTO `Account`
-				(	Email,						User_Name,				full_Name,			Department_ID,			Position_ID)
-VALUES 
-				('2can123@gmail.com',			'2can1234',			'Trần Việt Hoàng', 			2, 						2),
-                ('khoiDaRealest@yahoo.com',		'Khoi123',			'Trịnh Hoàng Nam', 			2, 						1),
-                ('Rhymastic@gmail.com',			'Rhymastis',		'Vũ Đức Thiện', 			6, 						2),
-                ('TranManhTung@yahoo.com',		'TungTeaa',			'Vũ Mạnh Tùng', 			3, 						1),
-                ('Ricky@rapname.com',			'RickyStar',		'Trần Tiến', 				2, 						3),
-                ('GDragon@gmail.com',			'GD1TRap',			'Kwon Jiyong', 				5, 						4),
-                ('TuanRapper@gmail.com',		'TuanRapper',		'Trần Quốc Tuấn', 			2, 						3),
-                ('HoangProvip@gmail.com',		'Hoangpro',			'Đinh Tiếng Hoàng',			7,						2),
-                ('VietDR@gmail.com',			'VietDragon',		'Trương Hoàng Minh Huy',	8,						1),
-                ('BlackMuder@yahoo.com',		'BlackMurder ',		'Hồ Thiên Ân',				1,						2);
-
 
 								-- TẠO BẢNG NHÓM
+DROP TABLE IF EXISTS `Group`;
 CREATE TABLE `Group`	(
 Group_ID				TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-Group_Name			VARCHAR(50) NOT NULL,
+Group_Name			VARCHAR(50)   NOT NULL,
 Creator_ID			TINYINT UNSIGNED NOT NULL,
-Create_Date			DATETIME DEFAULT NOW(),
+Create_Date			DATE,
 FOREIGN KEY (Creator_ID) REFERENCES `Account`(Account_ID),
-CHECK (length(Group_Name) >=6)
+CHECK (length(Group_Name) >=6),
+CONSTRAINT UK  UNIQUE KEY (Group_Name)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG NHÓM  ----------------------------------------------------------
-INSERT INTO `Group`(Group_Name,			Creator_ID)
-VALUES 		
-                    ('OTDcypher',			5),
-                    ('SpaceSpeakers',		3),
-                    ('BanCoTaiMa',			1),
-                    ('VietDreamerz',		2),
-                    ('TayNguyenSound',		4);
 
  								-- TẠO BẢNG THÔNG TIN THÀNH VIÊN NHÓM
+DROP TABLE IF EXISTS Group_Account;							
 CREATE TABLE Group_Account(
 Group_ID				TINYINT UNSIGNED NOT NULL,	
 Account_ID			TINYINT UNSIGNED NOT NULL,
+CONSTRAINT PRIMARY KEY (Group_ID,Account_ID),
 Join_Date			DATE NOT NULL,
 FOREIGN KEY (Group_ID) REFERENCES  `Group`(Group_ID),
 FOREIGN KEY (Account_ID) REFERENCES  `Account`(Account_ID)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG THÀNH VIÊN NHÓM ----------------------------------------------------------
-INSERT INTO Group_Account(Group_ID,		Account_ID,		Join_Date)
-VALUES 		
-						 (	1,				1,			'2021-10-27'),
-                         (	2,				2,			'2021-10-20'),
-                         (	1,				3,			'2021-10-10'),
-                         (	4,				2,			'2021-10-10'),
-                         (	1,				3,			'2021-9-10'),
-                         (	3,				4,			'2021-8-10'),
-                         (	2,				5,			'2021-7-10'),
-                         (	1,				5,			'2021-8-10');
+
 
 								-- TẠO BẢNG MẪU CÂU HỎI
+DROP TABLE IF EXISTS Type_Question;                                
 CREATE TABLE Type_Question(
 Type_ID				TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Type_Name			ENUM ('Essay','Multiple-Choice' ) NOT NULL
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG MÃU CÂU HỎI ----------------------------------------------------------
-INSERT INTO Type_Question(Type_Name)
-VALUES 					
-						 (1),(2),(1),(2),(1),(1),(2),(1),(2),(1);
 
 								-- TẠO BẢNG CHỦ ĐỀ CÂU HỎI
+DROP TABLE IF EXISTS Category_Question;                                
 CREATE TABLE Category_Question(
 Category_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Category_Name		VARCHAR(50) NOT NULL,
 CHECK (length(Category_Name) >=3 AND length(Category_Name)<=50)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG CHỦ ĐỀ CÂU HỎI ----------------------------------------------------------
-INSERT INTO Category_Question(Category_Name)
-VALUES 				
-							 ('Java'),('.NET'),('SQL'),('Postman'),('Ruby');
+
 
 									-- TẠO BẢNG CÂU HỎI
+DROP TABLE IF EXISTS Question;                                            
 CREATE TABLE Question(
 Question_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Content				NVARCHAR(200),
@@ -134,16 +84,10 @@ FOREIGN KEY (Creator_ID) REFERENCES `Account`(Account_ID),
 FOREIGN KEY (Category_ID) REFERENCES Category_Question(Category_ID),
 FOREIGN KEY (Type_ID) REFERENCES Type_Question(Type_ID)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG CÂU HỎI ----------------------------------------------------------
-INSERT INTO Question(		Content,							Category_ID,		Type_ID,		Creator_ID)
-VALUES 				
-					('Học Java Bắt Đầu Từ Đâu',						1,					1,					1),
-                    ('.Net Có Lợi Ích Gì',							2,					2,					2),
-                    ('Cách Tạo Bảng Trong MySQL như thế nào',		3,					2,					3),
-                    ('Tại sao sử dụng Postman?',					2,					2,					4),
-                    ('Hướng Đối Tượng Trong Ngôn Ngữ RuBy',			4,					1,					5);
+
 
 								-- TẠO BẢNG CÂU TRẢ LỜI
+DROP TABLE IF EXISTS Answer;
 CREATE TABLE Answer(
 Answer_ID			TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Content				NVARCHAR(200),
@@ -151,18 +95,10 @@ Question_ID			TINYINT UNSIGNED,
 isCorrect			ENUM('TRUE','FALSE'),
 FOREIGN KEY (Question_ID) REFERENCES Question(Question_ID)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG CÂU TRẢ LỜI ----------------------------------------------------------
-INSERT INTO Answer(Question_ID,		isCorrect)
-VALUES 			
-				  (	2,					1),
-                  (	2,					2),
-				  (	1,					1),
-                  (	3,					2),
-                  (	4,					1),
-                  (	1,					2),
-                  (	3,					2); 
+
 
 									-- TẠO BẢNG ĐỀ THI
+DROP TABLE IF EXISTS Exam;
 CREATE TABLE Exam(
 Exam_ID				TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,	
 `Code`				ENUM('TSA01','TSA02','TSA03'),
@@ -174,22 +110,15 @@ Create_Date			DATE,
 FOREIGN KEY (Creator_ID) REFERENCES `Account`(Account_ID),
 CHECK (Duration >= 15 AND Duration <= 120)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG  ĐỀ THI ----------------------------------------------------------
-INSERT INTO Exam(`Code`,		Title,							Category_ID,				Duration,			Creator_ID,			Create_Date)
-VALUES 			
-				( 1,	'Kiểm tra kỹ năng code trong MySQl', 		3, 							60, 				1, 				'2010-9-12' ),
-				( 2,	'tìm lỗi trong 1 database Java', 			1, 							15, 				2, 				'2012-5-30' ),
-                ( 3,	'đâu là Ruby', 								5, 							15, 				4, 				'2020-9-15' );
+
 
 							-- TẠO BẢNG CÂU HỎI TRONG ĐỀ THI
+DROP TABLE IF EXISTS Exam_Question;
 CREATE TABLE Exam_Question(
 Exam_ID				TINYINT UNSIGNED NOT NULL,
 Question_ID			TINYINT UNSIGNED NOT NULL,
 FOREIGN KEY (Exam_ID) REFERENCES Exam(Exam_ID),
 FOREIGN KEY (Question_ID) REFERENCES Question(Question_ID)
 );
------------------------------------------------------ THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG CÂU HỎI ĐỀ THI ----------------------------------------------------------
-INSERT INTO Exam_Question(Exam_ID,Question_ID)
-VALUES 					
-						  (1,2),(1,1),(1,3),(2,3); 
 
+                          
