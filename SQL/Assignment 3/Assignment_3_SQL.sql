@@ -1,6 +1,6 @@
 ##LƯU Ý CÁC BƯỚC CHẠY BÀI NÀY 
 ## B1: CHẠY DATABASE Testing_System_Assignment_2 LINK : https://github.com/heenino/-VTI.Aca-Railway25.git
-## B2: CHẠY Question 1 (BÔI ĐEN TỪ DÒNG 1 ĐẾN 141 )   
+## B2: CHẠY Question 1 (BÔI ĐEN TỪ DÒNG 8 ĐẾN 146 )   
 ## B3: CHẠY TỪNG Question    
 
 -------------- Question 1: Thêm ít nhất 10 record vào mỗi table
@@ -147,7 +147,7 @@ VALUES
                           
  ##LƯU Ý CÁC BƯỚC CHẠY BÀI NÀY 
 ## B1: CHẠY DATABASE Testing_System_Assignment_2 LINK : https://github.com/heenino/-VTI.Aca-Railway25.git
-## B2: CHẠY Question 1 (BÔI ĐEN TỪ DÒNG 1 ĐẾN 141 )   
+## B2: CHẠY Question 1 (BÔI ĐEN TỪ DÒNG 8 ĐẾN 146 )   
 ## B3: CHẠY TỪNG Question    
                           
                           ----------------------- Question 2: lấy ra tất cả các phòng ban
