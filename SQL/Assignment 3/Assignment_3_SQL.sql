@@ -25,32 +25,32 @@ VALUES
 -------------------------------------------------------------- THÊM DỮ LIỆU CHO BẢNG CHỨC VỤ LẦN 1 ----------------------------------------------------
 INSERT INTO Position (Position_Name)
 VALUES 	
-					(2),	(2),	(4),	(1);
+					(2),	(3),	(4),	(1);
 ----------------------------------------------------- THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG THÔNG TIN THÀNH VIÊN LẦN 1----------------------------------------------------------
 INSERT INTO `Account`
-				(Email,							 User_Name,				full_Name,					Department_ID,			Position_ID)
+				(Email,							 User_Name,				full_Name,					Department_ID,			Position_ID,		Create_Date)
 VALUES 
-				('domixi@gmail.com',			'Dotoc1234',			'Phùng Thanh Độ', 			9, 						2),
-                ('viruss@yahoo.com',			'Virussss123',			'Đinh Tiến Hoàng', 			5, 						1),
-                ('pewpew@gmail.com',			'PewHoang',				'Hoàng Văn Khoa', 			7, 						2),
-                ('KayBich@yahoo.com',			'KL7neverdie',			'Không Tìm Được', 			10, 					1),
-                ('LK@rapname.com',				'LKladykiller',			'Nguyễn Quang Hưng', 		9, 						3),
-                ('Binz@gmail.com',				'Binzzzzzz',			'Đan Lê', 					4, 						4),
-                ('HuanHoaHong@gmail.com',		'ThayHuan',				'Bùi Xuân Huấn', 			2, 						3),
-                ('TienBip@gmail.com',			'TienBip',				'Nguyễn Thành Long',		3,						2),
-                ('KhaBanh@gmail.com',			'KhaProVip123',			'Ngô Bá Khá',				4,						1),
-                ('Dendi@yahoo.com',				'Dendiso1dota2',		'Danil Ishutin',			11,						2),
-				('2can123@gmail.com',			'2can1234',				'Trần Việt Hoàng', 			2, 						2),
-                ('khoiDaRealest@yahoo.com',		'Khoi123',				'Trịnh Hoàng Nam', 			2, 						1),
-                ('Rhymastic@gmail.com',			'Rhymastis',			'Vũ Đức Thiện', 			6, 						2),
-                ('TranManhTung@yahoo.com',		'TungTeaa',				'Vũ Mạnh Tùng', 			3, 						1),
-                ('Ricky@rapname.com',			'RickyStar',			'Trần Tiến', 				2, 						3),
-                ('GDragon@gmail.com',			'GD1TRap',				'Kwon Jiyong', 				5, 						4),
-                ('TuanRapper@gmail.com',		'TuanRapper',			'Trần Quốc Tuấn', 			2,						3),
-                ('HoangProvip@gmail.com',		'Hoangpro',				'Đinh Tiếng Hoàng',			7,						2),
-                ('VietDR@gmail.com',			'VietDragon',			'Trương Hoàng Minh Huy',	8,						1),
-                ('BlackMuder@yahoo.com',		'BlackMurder ',			'Hồ Thiên Ân',				1,						2);
-				
+				('domixi@gmail.com',			'Dotoc1234',			'Phùng Thanh Độ', 			9, 						2,					'2020-12-10'),
+                ('viruss@yahoo.com',			'Virussss123',			'Đinh Tiến Hoàng', 			5, 						1,					'2019-12-9'),
+                ('pewpew@gmail.com',			'PewHoang',				'Hoàng Văn Khoa', 			7, 						2,					'2021-1-9'),
+                ('KayBich@yahoo.com',			'KL7neverdie',			'Không Tìm Được', 			10, 					1,					'2020-9-8'),
+                ('LK@rapname.com',				'LKladykiller',			'Nguyễn Quang Hưng', 		9, 						3,					'2020-12-1'),
+                ('Binz@gmail.com',				'Binzzzzzz',			'Đan Lê', 					4, 						4,					'2021-3-4'),
+                ('HuanHoaHong@gmail.com',		'ThayHuan',				'Bùi Xuân Huấn', 			2, 						3,					'2021-3-30'),
+                ('TienBip@gmail.com',			'TienBip',				'Nguyễn Thành Long',		3,						2,					'2021-4-19'),
+                ('KhaBanh@gmail.com',			'KhaProVip123',			'Ngô Bá Khá',				4,						1,					'2020-3-24'),
+                ('Dendi@yahoo.com',				'Dendiso1dota2',		'Danil Ishutin',			11,						2,					'2021-9-13'),
+				('2can123@gmail.com',			'2can1234',				'Trần Việt Hoàng', 			2, 						2,					'2021-9-14'),
+                ('khoiDaRealest@yahoo.com',		'Khoi123',				'Trịnh Hoàng Nam', 			2, 						1,					'2020-8-4'),
+                ('Rhymastic@gmail.com',			'Rhymastis',			'Vũ Đức Thiện', 			6, 						2,					'2019-10-8'),
+                ('TranManhTung@yahoo.com',		'TungTeaa',				'Vũ Mạnh Tùng', 			3, 						1,					'2020-3-4'),
+                ('Ricky@rapname.com',			'RickyStar',			'Trần Tiến', 				2, 						3,					'2020-7-6'),
+                ('GDragon@gmail.com',			'GD1TRap',				'Kwon Jiyong', 				5, 						4,					'2019-12-12'),
+                ('TuanRapper@gmail.com',		'TuanRapper',			'Trần Quốc Tuấn', 			2,						3,					'2019-11-30'),
+                ('HoangProvip@gmail.com',		'Hoangpro',				'Đinh Tiếng Hoàng',			7,						2,					'2020-4-30'),
+                ('VietDR@gmail.com',			'VietDragon',			'Trương Hoàng Minh Huy',	8,						1,					'2020-5-31'),
+                ('BlackMuder@yahoo.com',		'BlackMurder ',			'Hồ Thiên Ân',				1,						2,					'2020-6-28');
+				 
 ----------------------------------------------------- THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG NHÓM LẦN 1  ---------------------------------------------------------------
 INSERT INTO `Group`( Group_Name,			Creator_ID,			 Create_Date)
 VALUES 		
@@ -99,7 +99,7 @@ VALUES
 ----------------------------------------------------- THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG CÂU HỎI LẦN 1 ----------------------------------------------------------
 INSERT INTO Question(Content,													Category_ID,			Type_ID,			Creator_ID)
 VALUES 				
-					('Bạn hãy cho biết sự khác nhau giữa JDK và JRE',			1,						3,					5),
+					('Bạn hãy cho biết sự khác nhau giữa JDK và JRE',			1,						1,					5),
                     ('Function Overriding và Overloading là gì trong Java?',	1,						2,					6),
                     ('.NET hỗ trợ bao nhiêu ngôn ngữ?',							2,						2,					7),
                     ('Ruby là ngôn ngữ lập trình có kiểu tĩnh hay động?',		5,						2,					9),
@@ -115,23 +115,23 @@ INSERT INTO Answer(Question_ID,			isCorrect)
 VALUES 			
 				  (	2,					1),
                   (	2,					2),
-				  (	1,					1),
+				  (	9,					1),
                   (	3,					2),
-                  (	4,					1),
+                  (	6,					1),
                   (	1,					2),
                   (	3,					2),
-                  (	2,					1),
+                  (	7,					1),
                   (	2,					2),
 				  (	1,					1),
-                  (	3,					2),
+                  (	7,					2),
                   (	4,					1),
                   (	1,					2),
-                  (	3,					2),
+                  (	6,					2),
                   (	3,					2),
                   (	2,					1),
-                  (	2,					2),
-				  (	1,					1),
-                  (	3,					2);
+                  (	5,					2),
+				  (	4,					1),
+                  (	10,					2);
 ----------------------------------------------------- THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG  ĐỀ THI LẦN 1 ----------------------------------------------------------
 INSERT INTO Exam(`Code`,		Title,										Category_ID,				Duration,			Creator_ID,			Create_Date)
 VALUES 			
@@ -142,7 +142,8 @@ VALUES
 ----------------------------------------------------- THÊM DỮ LIỆU CHO CÁC CỘT Ở BẢNG CÂU HỎI ĐỀ THI ----------------------------------------------------------
 INSERT INTO Exam_Question(Exam_ID,Question_ID)
 VALUES 					
-						  (1,2),(1,1),(1,3),(2,3); 
+							(1,2),(1,1),(2,3),(2,3),
+							(3,4),(3,5),(2,6),(3,8); 
                           
                           
  ##LƯU Ý CÁC BƯỚC CHẠY BÀI NÀY 
@@ -176,7 +177,7 @@ WHERE	 	length(full_Name) =(	SELECT	max(length(full_Name))
 SELECT		Question_ID, count(Question_ID) AS So_luong, GROUP_CONCAT(Answer_ID) AS Answer_ID
 FROM		Answer
 GROUP BY	Question_ID
-HAVING 		count(Question_ID)>=4;
+HAVING 		count(Question_ID)>=2;
              
 
 
@@ -209,20 +210,30 @@ WHERE 	full_Name  LIKE  'B%n';
 
 
 ----------------------- Question 13: Xóa tất cả các question có nội dung bắt đầu bằng từ "câu hỏi"
-DELETE 
-FROM question
-WHERE Content LIKE 'câu hỏi%';
+	DELETE 
+	FROM question
+	WHERE Content LIKE 'câu hỏi%';
 
 
 
 ----------------------- Question 14: Update thông tin của account có id = 5 thành tên "Nguyễn Bá Lộc" và email thành loc.nguyenba@vti.com.vn
 UPDATE account
-set full_Name = 'Nguyễn Bá Lộc', Email = 'loc.nguyenba@vti.com.vn'
-WHERE Account_ID = 5;
-
+set 	full_Name = 'Nguyễn Bá Lộc', Email = 'loc.nguyenba@vti.com.vn'
+WHERE 	Account_ID = 5;
+select * from account;
 ----------------------------- Question 15: update account có id = 5 sẽ thuộc group có id = 4
-UPDATE group_account
-SET Account_ID = 5
-WHERE  Group_ID = 4
+UPDATE 	group_account
+SET 	Account_ID = 5
+WHERE  	Group_ID = 4;
+
+-- lấy ra danh sách các phòng ban có >3 nhân viên
+
+SELECT 		ACC.Department_ID AS ADEP,DEP.Department_ID,count(DEP.Department_ID)
+FROM 		account AS ACC
+INNER JOIN 	department AS DEP
+ON 			DEP.Department_ID = ACC.Department_ID
+GROUP BY 	Department_ID	
+HAVING 		count(DEP.Department_ID) >3
+ORDER BY 	ACCDEPID ASC
 
 
