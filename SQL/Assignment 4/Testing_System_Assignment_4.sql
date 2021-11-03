@@ -1,6 +1,6 @@
  ##LƯU Ý CÁC BƯỚC CHẠY BÀI NÀY 
-## B1: CHẠY DATABASE Testing_System_Assignment_2 LINK : https://github.com/heenino/-VTI.Aca-Railway25.git
-## B2: CHẠY Question 1 TRONG Assignment_3  (BÔI ĐEN TỪ DÒNG 8 ĐẾN 146 ) link: https://github.com/heenino/-VTI.Aca-Railway25.git 
+## B1: CHẠY DATABASE Testing_System_Assignment_2 LINK : https://github.com/heenino/-VTI.Aca-Railway25/blob/master/SQL/Assignment%202/Testing_System_Assignment_2.sql
+## B2: CHẠY Question 1 TRONG Assignment_3  (BÔI ĐEN TỪ DÒNG 8 ĐẾN 146 ) link: https://github.com/heenino/-VTI.Aca-Railway25/blob/master/SQL/Assignment%203/Assignment_3_SQL.sql
 ## B3: CHẠY TỪNG Question 
 
 
